@@ -4,16 +4,24 @@
 <head>
     <meta charset="utf-8">
     <title>Giphy API</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB"
+        crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="assets/css/style.css">
 
 </head>
 
 <body>
-    <button data-person="Captain America">Make America Great Again</button>
-    <button data-person="Winter Soldier">It's Winter, but I'll soldier it out</button>
-    <button data-person="Thor">Valhala Awaits</button>
-    <button data-person="Spiderman">Mr. Stark, I don't feel so good</button>
-    <button data-person="Batman">I'm Batman</button>
+    <div id="header" class="jumbotron">
+        <h1 class="display-3">Welcome To The Home Of Superhero Gifs</h1>
+    </div>
+    <button type="button" class="btn btn-outline-dark" data-person="Captain America">Make America great again!</button>
+    <button type="button" class="btn btn-outline-dark" data-person="Winter Soldier">It's Winter, but I'll Soldier it out</button>
+    <button type="button" class="btn btn-outline-dark" data-person="Thor">Valhala awaits!</button>
+    <button type="button" class="btn btn-outline-dark" data-person="Superman">A good pair of glasses can transform your face</button>
+    <button type="button" class="btn btn-outline-dark" data-person="Spiderman">Mr. Stark, I don't feel so good</button>
+    <button type="button" class="btn btn-outline-dark" data-person="Batman">I'm Batman!</button>
+    <br>
+    <br>
     <div id="container">
         <div class="buttons"></div>
         <form>
@@ -21,6 +29,8 @@
             <input type="text" id="myText" placeholder="Search Gifs">
             <button type="submit" value="Submit" id="submit">Search</button>
         </form>
+        <br>
+        <br>
         <div id="images"></div>
     </div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
