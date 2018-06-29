@@ -1,5 +1,30 @@
 console.log("hi");
 
+var heroes = ["Captain America", "Winter Soldier", "Thor", "Superman", "Spiderman", "Batman"];
+
+//To create buttons from list of heroes
+function renderButtons() {
+    $("#buttons").empty();
+    for (var i = 0; i < heroes.length; i++) {
+        var a = $("<button>");
+        a.addClass("btn btn-outline-dark");
+        a.attr("data-person", heroes[i]);
+        a.text(heroes[i]);
+        $("#buttons").append(a);
+    }
+}
+
+renderButtons();
+
+//creates buttons from the input of the search bar
+$("#Add-Hero").on("click", function(event) {
+    event.preventDefault();
+    var search = $("#search").val().trim();
+    heroes.push(search);
+    renderButtons();
+  });
+
+//Gets the Gifs of the rendered buttons
 $("button").on("click", function () {
     var hero = $(this).attr("data-person");
     var queryURL = "https://api.giphy.com/v1/gifs/search?q=" +
@@ -25,13 +50,16 @@ $("button").on("click", function () {
         });
 });
 
-$(".gif").on("click", function () {
-    var state = $(this).attr("data-state");
-    if (state === "still") {
-        $(this).attr("src", $(this).attr("data-animate"));
-        $(this).attr("data-state", "animate");
-    } else {
-        $(this).attr("src", $(this).attr("data-still"));
-        $(this).attr("data-state", "still");
-    }
+//to pause gif  
+$('body').on('click', '.gif', function() {
+    var src = $(this).attr("src");
+  if($(this).hasClass('playing')){
+     //stop
+     $(this).attr('src', src.replace(/\.gif/i, "_s.gif"))
+     $(this).removeClass('playing');
+  } else {
+    //play
+    $(this).addClass('playing');
+    $(this).attr('src', src.replace(/\_s.gif/i, ".gif"))
+  }
 });
