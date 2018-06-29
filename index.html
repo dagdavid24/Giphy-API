@@ -11,23 +11,33 @@
 </head>
 
 <body>
-    <div id="header" class="jumbotron">
-        <h1 class="display-3">Welcome To The Home Of Superhero Gifs</h1>
-    </div>
-    <div id ="buttons"></div>
-    <br>
-    <br>
-    <div id="container">
+    <div class="main">
+        <div id="header" class="jumbotron">
+            <h1 class="display-3">Welcome To The Home Of Superhero Gifs</h1>
+        </div>
+        <div id="buttons"></div>
+        <br>
+        <br>
+        <div id="container">
 
-        <form>
-            <h4>Add a superhero</h4>
-            <input type="text" id="search" placeholder="Search Gifs">
-            <input type="submit" value="add-hero" id="Add-Hero"></input>
-        </form>
-        <br>
-        <br>
-        <div id="images"></div>
+            <!--<form>
+                <h4>Add a superhero</h4>
+                <input type="text" id="search" placeholder="Search Gifs" class="form-control">
+                <br>
+                <input type="submit" value="add-hero" id="add-hero"></input>
+            </form>-->
+            <div class="input-group">
+                <input type="text" class="form-control" placeholder="Search Gifs" aria-label="" aria-describedby="basic-addon1" id="search">
+                <div class="input-group-append">
+                    <button class="btn btn-secondary" type="submit" id="add-hero">Add Hero</button>
+                </div>
+            </div>
+            <br>
+            <br>
+            <div id="images"></div>
+        </div>
     </div>
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="assets/javascript/giphy.js"></script>
 </body>

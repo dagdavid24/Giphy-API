@@ -1,6 +1,14 @@
 console.log("hi");
 
-var heroes = ["Captain America", "Winter Soldier", "Thor", "Superman", "Spiderman", "Batman"];
+var heroes = ["Captain America", "Winter Soldier", "Thor", "Superman", "Spiderman", "Batman", "Leonidas"];
+
+//creates buttons from the input of the search bar
+$("#add-hero").on("click", function (event) {
+    event.preventDefault();
+    var search = $("#search").val().trim();
+    heroes.push(search);
+    renderButtons();
+});
 
 //To create buttons from list of heroes
 function renderButtons() {
@@ -14,15 +22,8 @@ function renderButtons() {
     }
 }
 
+//renders buttons
 renderButtons();
-
-//creates buttons from the input of the search bar
-$("#Add-Hero").on("click", function(event) {
-    event.preventDefault();
-    var search = $("#search").val().trim();
-    heroes.push(search);
-    renderButtons();
-  });
 
 //Gets the Gifs of the rendered buttons
 $("button").on("click", function () {
@@ -51,15 +52,16 @@ $("button").on("click", function () {
 });
 
 //to pause gif  
-$('body').on('click', '.gif', function() {
+$('body').on('click', '.gif', function () {
     var src = $(this).attr("src");
-  if($(this).hasClass('playing')){
-     //stop
-     $(this).attr('src', src.replace(/\.gif/i, "_s.gif"))
-     $(this).removeClass('playing');
-  } else {
-    //play
-    $(this).addClass('playing');
-    $(this).attr('src', src.replace(/\_s.gif/i, ".gif"))
-  }
+    if ($(this).hasClass('playing')) {
+        //stop
+        $(this).attr('src', src.replace(/\.gif/i, "_s.gif"))
+        $(this).removeClass('playing');
+    } else {
+        //play
+        $(this).addClass('playing');
+        $(this).attr('src', src.replace(/\_s.gif/i, ".gif"))
+    }
 });
+

@@ -1,8 +1,20 @@
+body {
+    background-image: url("../images/ancient-arena.jpg");
+    background-repeat: repeat-y;
+    background-size: auto;
+}
 #header {
-    background: rgb(39, 39, 39);
-    color: rgb(240, 240, 240);
+    background: rgba(58, 58, 58, 0.87);
+    color: rgb(255, 255, 255);
     text-align: center;
 }
 .gif {
-    border: 2px solid rgb(66, 66, 66);
+    border: 1px solid rgb(66, 66, 66);
+}
+.main {
+    width: 70%;
+    background-color: #ffffff;
+    background-repeat: no-repeat;
+    padding: 80px;
+    margin: 0 auto;
 }
