@@ -9,11 +9,11 @@ body {
     text-align: center;
 }
 .gif {
-    border: 1px solid rgb(66, 66, 66);
+    border: 1px solid rgb(230, 230, 230);
 }
 .main {
     width: 70%;
-    background-color: #ffffff;
+    background-color: #d1d1d1;
     background-repeat: no-repeat;
     padding: 80px;
     margin: 0 auto;
