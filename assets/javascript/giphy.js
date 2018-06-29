@@ -1,15 +1,15 @@
 console.log("hi");
 
-var heroes = ["Captain America", "Winter Soldier", "Thor", "Wonder Woman", "Princess Fiona", "Superman", "Spiderman", "Batman", "Leonidas"];
+var topics = ["Captain America", "Winter Soldier", "Thor", "Wonder Woman", "Princess Fiona", "Superman", "Spiderman", "Batman", "Leonidas"];
 
 //To create buttons from list of heroes
 function renderButtons() {
     $("#buttons").empty();
-    for (var i = 0; i < heroes.length; i++) {
+    for (var i = 0; i < topics.length; i++) {
         var a = $("<button>");
         a.addClass("btn btn-outline-dark");
-        a.attr("data-person", heroes[i]);
-        a.text(heroes[i]);
+        a.attr("data-person", topics[i]);
+        a.text(topics[i]);
         $("#buttons").append(a);
     }
 }
@@ -47,7 +47,7 @@ $("button").on("click", function callUponMe() {
 $("#add-hero").on("click", function (event) {
     event.preventDefault();
     var search = $("#search").val().trim();
-    heroes.push(search);
+    topics.push(search);
     renderButtons();
 });
 
