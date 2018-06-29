@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Giphy API</title>
+    <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+
+</head>
+
+<body>
+    <button data-person="Captain America">Make America Great Again</button>
+    <button data-person="Winter Soldier">It's Winter, but I'll soldier it out</button>
+    <button data-person="Thor">Valhala Awaits</button>
+    <button data-person="Spiderman">Mr. Stark, I don't feel so good</button>
+    <button data-person="Batman">I'm Batman</button>
+    <div id="container">
+        <div class="buttons"></div>
+        <form>
+            <h4>Add a superhero</h4>
+            <input type="text" id="myText" placeholder="Search Gifs">
+            <button type="submit" value="Submit" id="submit">Search</button>
+        </form>
+        <div id="images"></div>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="assets/javascript/giphy.js"></script>
+</body>
+
+</html>
