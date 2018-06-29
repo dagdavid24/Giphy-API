@@ -1,14 +1,6 @@
 console.log("hi");
 
-var heroes = ["Captain America", "Winter Soldier", "Thor", "Superman", "Spiderman", "Batman", "Leonidas"];
-
-//creates buttons from the input of the search bar
-$("#add-hero").on("click", function (event) {
-    event.preventDefault();
-    var search = $("#search").val().trim();
-    heroes.push(search);
-    renderButtons();
-});
+var heroes = ["Captain America", "Winter Soldier", "Thor", "Wonder Woman", "Princess Fiona", "Superman", "Spiderman", "Batman", "Leonidas"];
 
 //To create buttons from list of heroes
 function renderButtons() {
@@ -26,7 +18,7 @@ function renderButtons() {
 renderButtons();
 
 //Gets the Gifs of the rendered buttons
-$("button").on("click", function () {
+$("button").on("click", function callUponMe() {
     var hero = $(this).attr("data-person");
     var queryURL = "https://api.giphy.com/v1/gifs/search?q=" +
         hero + "&api_key=5jb45kTi0xVsoCeW7xopxXayRod0qBfC&limit=10";
@@ -50,6 +42,17 @@ $("button").on("click", function () {
             }
         });
 });
+
+//creates buttons from the input of the search bar
+$("#add-hero").on("click", function (event) {
+    event.preventDefault();
+    var search = $("#search").val().trim();
+    heroes.push(search);
+    renderButtons();
+});
+
+
+$("#add-hero").on("click", callUponMe);
 
 //to pause gif  
 $('body').on('click', '.gif', function () {
